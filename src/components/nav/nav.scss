@@ -1,0 +1,74 @@
+@import '../scss/include.scss';
+@import '../scss/extend.scss';
+
+// #Nav {
+    
+//     ul{
+//         @include flexible_grid();
+//         place-items: center;
+//        //@include grid(3);
+//         gap: 1rem;
+//        li{
+//         a{
+//             color: white;
+//             font-weight: bold;
+//             text-decoration: none;
+//             &:hover{
+//                 color: crimson;
+//                 text-decoration: underline;
+//             }
+//         }
+//        }
+//     }
+// }
+
+#Nav{
+    ul{
+        @include flex_between();
+        padding: 1rem;
+        li{
+        @include flex_between();  
+        gap: 1rem;
+
+       }
+       .Menu{
+        display: none;
+       }
+       @include mobile{
+        .group1, .group2{
+          display: none; 
+        }
+        .Menu{
+            display: flex;
+            cursor: pointer;
+        }
+       @include desktop{
+        .group1, .group2{
+          display: flex; 
+        }
+        .Menu{
+            display: none;
+        }
+       }
+
+    }
+}
+ .popup{
+    border: 1px solid purple;
+     padding: 1rem;
+    position: fixed;
+    right: 0px;
+    top: 60px;
+    width: 50%;
+    li{
+        @include flex_between();
+        flex-direction: column;
+    }
+    @include mobile{
+      display: block;
+    }
+    @include desktop{
+      display: none;
+    }
+ }
+}
